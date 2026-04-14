@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* 隱藏捲軸以達成全螢幕效果 */
+        background-color: #050510;
+      }
+      canvas {
+        display: block; /* 移除畫布下方的微小間隙 */
+      }
+      #window-container {
+        display: none; /* 預設隱藏 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 75vh;
+        z-index: 100;
+        background: rgba(5, 5, 20, 0.95);
+        border: 2px solid #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+      #window-header {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: sans-serif;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      #window-header button {
+        background: #ff4b4b;
+        border: none;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      #display-frame {
+        width: 100%;
+        height: calc(100% - 45px);
+        border: none;
+      }
+    </style>
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 彈出式作品展示視窗 -->
+    <div id="window-container">
+      <div id="window-header">
+        <span id="window-title">作品展示中...</span>
+        <button onclick="document.getElementById('window-container').style.display='none'">關閉視窗 X</button>
+      </div>
+      <iframe id="display-frame" name="display-frame"></iframe>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
