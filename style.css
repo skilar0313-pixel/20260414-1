@@ -1,8 +1,12 @@
+
 html, body {
   margin: 0;
   padding: 0;
-}
-
-canvas {
-  display: block;
+  width: 100vw;   /* 使用視窗單位 */
+  height: 100vh;
+  background-image: url('你的圖片名稱.jpg');
+  background-size: cover;      /* 確保圖片填滿 */
+  background-position: center; /* 置中 */
+  background-repeat: no-repeat;
+  background-color: #0b0e1e;   /* 如果圖片沒出來，右邊就是這個顏色 */
 }
